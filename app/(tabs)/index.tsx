@@ -1,14 +1,17 @@
 import ThemedText from '@/components/ThemedText';
+import ThemedView from '@/components/ThemedView';
 import Colors from '@/constants/colors';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function HomeScreen() {
+
   return (
-    <View style={styles.container}>
+    <ThemedView>
+
       <Text>Home</Text>
-      <ThemedText variant="labelMedium" family='secondary' weight="bold" color={Colors.primary}>124</ThemedText>
-      <ThemedText variant="labelMedium" weight="bold" color={Colors.primary}>124</ThemedText>
-    </View>
+      <ThemedText variant="labelMedium" family='secondary' weight="bold" >124</ThemedText>
+      <ThemedText variant="labelMedium" weight="bold" >124</ThemedText>
+    </ThemedView>
   );
 }
 

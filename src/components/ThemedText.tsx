@@ -7,7 +7,7 @@ import React from 'react';
 import { Text, TextStyle, StyleProp, TextProps } from 'react-native';
 import { TypeScale, TextVariant } from '@/constants/typography';
 import { FontKeys, FontFamily, FontWeight } from '@/constants/fonts';
-import Colors from '@/constants/colors';
+import { useTheme } from '@/hooks/useTheme';
 
 interface ThemedTextProps extends Omit<TextProps, 'style'> {
   variant?: TextVariant;
@@ -22,11 +22,13 @@ export default function ThemedText({
   variant = 'bodyMedium',
   family = 'primary',
   weight = 'regular',
-  color = Colors.textPrimary,
+  color,
   style,
   children,
   ...rest
 }: ThemedTextProps) {
+  const { colors } = useTheme();
+  const resolvedColor = color ?? colors.textPrimary;
   const { fontSize, lineHeight, letterSpacing } = TypeScale[variant];
 
   const baseStyle: TextStyle = {
@@ -37,7 +39,7 @@ export default function ThemedText({
 
   const customStyle: TextStyle = {
     fontFamily: FontKeys[family][weight],
-    color,
+    color: resolvedColor,
   };
 
   return (
