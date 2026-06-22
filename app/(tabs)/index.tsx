@@ -9,8 +9,8 @@ export default function HomeScreen() {
     <ThemedView>
 
       <Text>Home</Text>
-      <ThemedText variant="labelMedium" family='secondary' weight="bold" >124</ThemedText>
-      <ThemedText variant="labelMedium" weight="bold" >124</ThemedText>
+      <ThemedText variant="labelMedium" family='secondary' weight="bold" >Primary Font</ThemedText>
+      <ThemedText variant="labelMedium" weight="bold" >Second Font</ThemedText>
     </ThemedView>
   );
 }
