@@ -1,0 +1,2 @@
+# Place custom .ttf / .otf font files here.
+# They can be loaded using expo-font's useFonts hook.
