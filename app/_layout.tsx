@@ -43,6 +43,7 @@ function RootLayoutNav() {
           headerStyle: { backgroundColor: colors.background },
           headerTintColor: colors.textPrimary,
           headerShadowVisible: false,
+          headerShown: false,
           contentStyle: { backgroundColor: colors.background },
         }}
       />

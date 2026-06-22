@@ -3,3 +3,4 @@ export * from './spacing';
 export * from './fonts';
 export * from './fontAssets';
 export * from './typography';
+export * from './icons'
