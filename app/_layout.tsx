@@ -29,7 +29,7 @@ function RootLayoutNav() {
 export default function RootLayout() {
   const [loaded] = useFonts(FontAssets);
   return (
-    <ThemeProvider>
+    <ThemeProvider >
       <SafeAreaProvider>
         <RootLayoutNav />
       </SafeAreaProvider>
