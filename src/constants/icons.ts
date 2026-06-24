@@ -27,14 +27,30 @@
  */
 
 
-export const AppIcons = {
+import EyeSvg from '../../assets/images/tab/eye.svg'
+import EyeOffSvg from '../../assets/images/tab/eye-off.svg'
 
+export const AppIcons = {
+  eye: EyeSvg,
+  eyeOff: EyeOffSvg,
 }
 
-import HomeTabSvg from '../../assets/images/tab/mira.svg'
-import SettingsTabSvg from '../../assets/images/tab/search.svg'
+
+// Tab Icons — Light
+import HomeTabLightSvg from '../../assets/images/tab/light/home.svg'
+import SettingsTabLightSvg from '../../assets/images/tab/light/setting.svg'
+
+// Tab Icons — Dark
+import HomeTabDarkSvg from '../../assets/images/tab/dark/home.svg'
+import SettingsTabDarkSvg from '../../assets/images/tab/dark/setting.svg'
 
 export const TabIcons = {
-    home: HomeTabSvg,
-    settings: SettingsTabSvg,
+    light: {
+        home: HomeTabLightSvg,
+        settings: SettingsTabLightSvg,
+    },
+    dark: {
+        home: HomeTabDarkSvg,
+        settings: SettingsTabDarkSvg,
+    },
 }

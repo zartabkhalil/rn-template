@@ -40,14 +40,17 @@ function RootLayoutNav() {
   return (
     <SafeAreaProvider>
       <Stack
+        initialRouteName="(tabs)"
         screenOptions={{
           headerStyle: { backgroundColor: colors.background },
           headerTintColor: colors.textPrimary,
           headerShadowVisible: false,
-          headerShown: false,
           contentStyle: { backgroundColor: colors.background },
         }}
-      />
+      >
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(demo)" options={{ headerShown: false }} />
+      </Stack>
     </SafeAreaProvider>
   );
 }
