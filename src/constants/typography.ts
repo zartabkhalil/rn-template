@@ -38,3 +38,19 @@ export const TypeScale: Record<TextVariant, TypeScaleEntry> = {
   labelMedium: { fontSize: 12, lineHeight: 16, letterSpacing: 0.5  },
   labelSmall:  { fontSize: 11, lineHeight: 16, letterSpacing: 0.5  },
 };
+
+export const FontSizes = {
+  xs:  11,
+  sm:  13,
+  md:  15,
+  lg:  17,
+  xl:  20,
+  xxl: 24,
+};
+
+export const FontWeights = {
+  regular:  '400' as const,
+  medium:   '500' as const,
+  semibold: '600' as const,
+  bold:     '700' as const,
+};
