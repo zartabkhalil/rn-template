@@ -26,12 +26,9 @@
  *  <TabIcons.home width={24} height={24} fill={colors.primary} />
  */
 
-import EyeSvg from '../../assets/images/svgs/eye.svg';
-import EyeOffSvg from '../../assets/images/svgs/eye-off.svg';
 
 export const AppIcons = {
-    eye: EyeSvg,
-    eyeOff: EyeOffSvg,
+
 }
 
 import HomeTabSvg from '../../assets/images/tab/mira.svg'
