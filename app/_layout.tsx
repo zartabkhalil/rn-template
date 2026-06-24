@@ -23,6 +23,7 @@
  *  finish loading to prevent flash of unstyled text.
  */
 
+import '@/locales/i18n';
 import { useEffect } from 'react';
 import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';

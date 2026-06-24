@@ -10,7 +10,7 @@ export default function HomeScreen() {
     <ThemedView>
 
       <Text>Home</Text>
-      <ThemedButton label='Sign In' />
+
       <ThemedText variant="labelMedium" family='secondary' weight="bold" >Primary Font</ThemedText>
       <ThemedText variant="labelMedium" weight="bold" >Second Font</ThemedText>
     </ThemedView>
