@@ -8,8 +8,7 @@
         "src/*"
       ]
     },
-    "ignoreDeprecations": "6.0",
-    "types": ["react-native-svg-transformer/types"]
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "**/*.ts",

@@ -23,6 +23,7 @@
  *  finish loading to prevent flash of unstyled text.
  */
 
+import '@/locales/i18n';
 import { useEffect } from 'react';
 import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
@@ -39,14 +40,17 @@ function RootLayoutNav() {
   return (
     <SafeAreaProvider>
       <Stack
+        initialRouteName="(tabs)"
         screenOptions={{
           headerStyle: { backgroundColor: colors.background },
           headerTintColor: colors.textPrimary,
           headerShadowVisible: false,
-          headerShown: false,
           contentStyle: { backgroundColor: colors.background },
         }}
-      />
+      >
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(demo)" options={{ headerShown: false }} />
+      </Stack>
     </SafeAreaProvider>
   );
 }

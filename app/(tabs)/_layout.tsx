@@ -22,12 +22,15 @@ import { Tabs } from 'expo-router'
 import { useTheme } from '@/hooks/useTheme'
 import { TabIcons } from '@/constants'
 
-const HomeIcon = TabIcons.home
-const SettingsIcon = TabIcons.settings
+
+const TAB_SCREENS = [
+  { name: 'index', label: 'Home', lightIcon: TabIcons.light.home, darkIcon: TabIcons.dark.home },
+  { name: 'settings', label: 'Settings', lightIcon: TabIcons.light.settings, darkIcon: TabIcons.dark.settings },
+]
 
 
 export default function TabsLayout() {
-  const { colors } = useTheme()
+  const { colors, isDark } = useTheme()
 
   return (
     <Tabs
@@ -42,27 +45,20 @@ export default function TabsLayout() {
       }}
     >
 
-      <Tabs.Screen
-        key={"Home"}
-        name={'index'}
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <HomeIcon width={size} height={size} fill={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        key={"Settings"}
-        name={'settings'}
-        options={{
-          title: 'Settings',
-          tabBarIcon: ({ color, size }) => (
-            <SettingsIcon width={size} height={size} fill={color} />
-          ),
-        }}
-      />
-
+      {TAB_SCREENS.map(({ name, label, lightIcon: LightIcon, darkIcon: DarkIcon }) => (
+        <Tabs.Screen
+          key={name}
+          name={name}
+          options={{
+            title: label,
+            tabBarIcon: ({ size }) => (
+              isDark
+                ? <DarkIcon width={size} height={size} />
+                : <LightIcon width={size} height={size} />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   )
 }

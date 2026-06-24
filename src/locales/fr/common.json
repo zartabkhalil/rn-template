@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Nom de l'application",
+    "tagline": "Votre slogan ici"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "settings": "Paramètres",
+    "back": "Retour"
+  },
+  "actions": {
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "retry": "Réessayer",
+    "loading": "Chargement..."
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Veuillez réessayer.",
+    "network": "Pas de connexion internet.",
+    "timeout": "La requête a expiré."
+  }
+}
