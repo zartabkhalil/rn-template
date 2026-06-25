@@ -75,4 +75,9 @@ export const authService = {
       refreshToken,
     };
   },
+
+  forgotPassword: async (email: string): Promise<void> => {
+    // TODO: replace with your API call e.g. POST /auth/forgot-password
+    return Promise.resolve();
+  },
 };

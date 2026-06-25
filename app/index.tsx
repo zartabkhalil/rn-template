@@ -1,16 +1,48 @@
 /**
  * App Entry Point
  *
- * Handles initial routing logic.
- * Currently redirects to (tabs) home.
+ * Watches auth state and navigates automatically.
+ * No manual reload needed on login or logout.
  *
- * ─── Auth module ────────────────────────────────────────────────
- * When auth module is added, update this file to:
- * - Redirect authenticated users → /(tabs)
- * - Redirect unauthenticated users → /(auth)/login
+ * ─── How it works ───────────────────────────────────────────────
+ *  useEffect watches isAuthenticated — any change triggers
+ *  navigation automatically via router.replace()
+ *  replace() is used instead of push() so user can't
+ *  go back to the previous auth state screen
  */
-import { Redirect } from 'expo-router';
+
+import { useEffect } from 'react';
+import { useRouter } from 'expo-router';
+import { useAuth } from '@/modules/auth';
+import { View, ActivityIndicator } from 'react-native';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Index() {
-  return <Redirect href="/(tabs)" />;
+  const router = useRouter();
+  const { isAuthenticated, isLoading } = useAuth();
+  const { colors } = useTheme();
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (isAuthenticated) {
+      router.replace('/(tabs)');
+    } else {
+      router.replace('/(auth)/login');
+    }
+  }, [isAuthenticated, isLoading]);
+
+  // Show spinner while checking cached session
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.background,
+      }}
+    >
+      <ActivityIndicator color={colors.primary} />
+    </View>
+  );
 }

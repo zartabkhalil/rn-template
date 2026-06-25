@@ -23,14 +23,15 @@
  *  finish loading to prevent flash of unstyled text.
  */
 
-import '@/locales/i18n';
-import { useEffect } from 'react';
-import { SplashScreen, Stack } from 'expo-router';
-import { useFonts } from 'expo-font';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import ThemeProvider from '@/context/ThemeContext';
-import { FontAssets } from '@/constants/fontAssets';
-import { useTheme } from '@/hooks/useTheme';
+import { FontAssets } from "@/constants/fontAssets";
+import ThemeProvider from "@/context/ThemeContext";
+import { useTheme } from "@/hooks/useTheme";
+import "@/locales/i18n";
+import { AuthProvider } from "@/modules/auth";
+import { useFonts } from "expo-font";
+import { SplashScreen, Stack } from "expo-router";
+import { useEffect } from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -50,6 +51,7 @@ function RootLayoutNav() {
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(demo)" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       </Stack>
     </SafeAreaProvider>
   );
@@ -68,7 +70,9 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider>
-      <RootLayoutNav />
+      <AuthProvider>
+        <RootLayoutNav />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

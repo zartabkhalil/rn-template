@@ -29,6 +29,7 @@
  */
 
 import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import { router } from 'expo-router';
 import { authService } from '../services/authService';
 import { authStorage } from '../storage/authStorage';
 import { AuthState, LoginPayload, RegisterPayload, User, Profile, Session } from '../types/auth.types';
@@ -78,6 +79,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       setSession(newSession);
       setUser(loggedInUser);
       setProfile(userProfile);
+      router.replace('/(tabs)');
     } catch (error) {
       throw error;
     }
@@ -85,16 +87,17 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
 
   const signUp = useCallback(async (payload: RegisterPayload) => {
     try {
-      const { user: registeredUser, session: newSession } = await authService.register(payload);
-      await authStorage.saveSession(newSession);
-      await authStorage.saveUser(registeredUser);
+      const { user, session } = await authService.register(payload);
+      await authStorage.saveSession(session);
+      await authStorage.saveUser(user);
 
-      const userProfile = await authService.fetchProfile(registeredUser.id);
-      await authStorage.saveProfile(userProfile);
+      const profile = await authService.fetchProfile(user.id);
+      await authStorage.saveProfile(profile);
 
-      setSession(newSession);
-      setUser(registeredUser);
-      setProfile(userProfile);
+      setUser(user);
+      setSession(session);
+      setProfile(profile);
+      router.replace('/(tabs)');
     } catch (error) {
       throw error;
     }
@@ -107,6 +110,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       setSession(null);
       setUser(null);
       setProfile(null);
+      router.replace('/(auth)/login');
     } catch (error) {
       throw error;
     }
