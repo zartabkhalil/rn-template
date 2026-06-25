@@ -27,12 +27,12 @@
  */
 
 
-import EyeSvg from '../../assets/images/tab/eye.svg'
-import EyeOffSvg from '../../assets/images/tab/eye-off.svg'
+import EyeSvg from '../../assets/images/svgs/eye.svg'
+import EyeOffSvg from '../../assets/images/svgs/eye-off.svg'
 
 export const AppIcons = {
-  eye: EyeSvg,
-  eyeOff: EyeOffSvg,
+    eye: EyeSvg,
+    eyeOff: EyeOffSvg,
 }
 
 
