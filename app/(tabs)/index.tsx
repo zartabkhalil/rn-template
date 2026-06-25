@@ -3,10 +3,12 @@ import { ThemedView, ThemedText, ThemedButton } from '@/components';
 import { useTheme } from '@/hooks/useTheme';
 import { Spacing } from '@/constants';
 import { StyleSheet, Switch, View } from 'react-native';
+import { useAuth } from '@/modules/auth';
 
 export default function HomeScreen() {
   const router = useRouter();
   const { colors, isDark, setThemeMode } = useTheme();
+  const { signOut } = useAuth();
 
 
   return (
@@ -28,6 +30,12 @@ export default function HomeScreen() {
           variant="outline"
           onPress={() => router.push('/(demo)')}
           style={{ marginTop: Spacing.xl }}
+        />
+        <ThemedButton
+          label="Logout"
+          variant="destructive"
+          onPress={signOut}
+          style={{ marginTop: Spacing.md }}
         />
       </View>
     </ThemedView>
