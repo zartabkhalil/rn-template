@@ -32,6 +32,9 @@ import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "@/modules/redux";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -71,7 +74,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <RootLayoutNav />
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <RootLayoutNav />
+          </PersistGate>
+        </Provider>
       </AuthProvider>
     </ThemeProvider>
   );
