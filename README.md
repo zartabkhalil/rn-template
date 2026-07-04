@@ -8,16 +8,16 @@ Built with TypeScript, Expo Router, a full theming system, localization, and a C
 
 ## What's included
 
-| Feature | Details |
-|---|---|
-| Navigation | Expo Router (file-based) with Stack + Tabs pre-wired |
-| Theming | Light / dark / system mode with manual override |
-| Typography | Material Design 3 type scale with dual font family support |
-| Localization | English, Arabic (RTL), French via i18next + expo-localization |
-| Icons | SVG icons from Figma via react-native-svg-transformer |
-| Components | ThemedText, ThemedView, ThemedButton, ThemedInput |
+| Feature      | Details                                                          |
+| ------------ | ---------------------------------------------------------------- |
+| Navigation   | Expo Router (file-based) with Stack + Tabs pre-wired             |
+| Theming      | Light / dark / system mode with manual override                  |
+| Typography   | Material Design 3 type scale with dual font family support       |
+| Localization | English, Arabic (RTL), French via i18next + expo-localization    |
+| Icons        | SVG icons from Figma via react-native-svg-transformer            |
+| Components   | ThemedText, ThemedView, ThemedButton, ThemedInput                |
 | Demo screens | Visual reference for every base feature — delete before shipping |
-| CLI | `npx @yourname/expo-kit` scaffolds a new project in seconds |
+| CLI          | `npx @yourname/expo-kit` scaffolds a new project in seconds      |
 
 ---
 
@@ -45,6 +45,7 @@ The CLI will ask:
 ```
 
 Then it will:
+
 1. Clone this template
 2. Update app name and bundle ID
 3. Reset git history
@@ -148,9 +149,9 @@ const { colors, isDark, setThemeMode } = useTheme()
 ### Switching theme mode
 
 ```tsx
-setThemeMode('dark')    // force dark mode
-setThemeMode('light')   // force light mode
-setThemeMode('system')  // follow device setting (default)
+setThemeMode("dark"); // force dark mode
+setThemeMode("light"); // force light mode
+setThemeMode("system"); // follow device setting (default)
 ```
 
 ### Customizing colors
@@ -159,22 +160,22 @@ Edit `src/constants/colors.ts`:
 
 ```ts
 export const LightColors = {
-  primary:       '#0066FF',   // ← change your brand color here
-  secondary:     '#7B2FBE',
-  background:    '#FFFFFF',
-  surface:       '#F5F5F5',
-  textPrimary:   '#111111',
-  textSecondary: '#666666',
-  border:        '#E0E0E0',
-  error:         '#FF3B30',
-  success:       '#34C759',
-  warning:       '#FF9500',
-}
+  primary: "#0066FF", // ← change your brand color here
+  secondary: "#7B2FBE",
+  background: "#FFFFFF",
+  surface: "#F5F5F5",
+  textPrimary: "#111111",
+  textSecondary: "#666666",
+  border: "#E0E0E0",
+  error: "#FF3B30",
+  success: "#34C759",
+  warning: "#FF9500",
+};
 
 export const DarkColors = {
-  primary:       '#4D9FFF',   // ← dark mode variant
+  primary: "#4D9FFF", // ← dark mode variant
   // ...
-}
+};
 ```
 
 ### Adding a new color token
@@ -201,23 +202,23 @@ import { ThemedText } from '@/components'
 
 ### Available variants
 
-| Variant | Size | Use for |
-|---|---|---|
-| displayLarge | 57 | Hero text |
-| displayMedium | 45 | Large headings |
-| displaySmall | 36 | Section titles |
-| headlineLarge | 32 | Screen titles |
-| headlineMedium | 28 | Card headings |
-| headlineSmall | 24 | Sub-headings |
-| titleLarge | 22 | List titles |
-| titleMedium | 16 | Emphasized body |
-| titleSmall | 14 | Small titles |
-| bodyLarge | 16 | Primary body text |
-| bodyMedium | 14 | Default body text |
-| bodySmall | 12 | Secondary body text |
-| labelLarge | 14 | Button labels |
-| labelMedium | 12 | Tags, chips |
-| labelSmall | 11 | Captions |
+| Variant        | Size | Use for             |
+| -------------- | ---- | ------------------- |
+| displayLarge   | 57   | Hero text           |
+| displayMedium  | 45   | Large headings      |
+| displaySmall   | 36   | Section titles      |
+| headlineLarge  | 32   | Screen titles       |
+| headlineMedium | 28   | Card headings       |
+| headlineSmall  | 24   | Sub-headings        |
+| titleLarge     | 22   | List titles         |
+| titleMedium    | 16   | Emphasized body     |
+| titleSmall     | 14   | Small titles        |
+| bodyLarge      | 16   | Primary body text   |
+| bodyMedium     | 14   | Default body text   |
+| bodySmall      | 12   | Secondary body text |
+| labelLarge     | 14   | Button labels       |
+| labelMedium    | 12   | Tags, chips         |
+| labelSmall     | 11   | Captions            |
 
 ### Font families
 
@@ -237,22 +238,22 @@ The template supports two font families — primary and secondary.
 ```ts
 export const FontKeys = {
   primary: {
-    regular:  'YourFont_400Regular',
-    medium:   'YourFont_500Medium',
-    semibold: 'YourFont_600SemiBold',
-    bold:     'YourFont_700Bold',
+    regular: "YourFont_400Regular",
+    medium: "YourFont_500Medium",
+    semibold: "YourFont_600SemiBold",
+    bold: "YourFont_700Bold",
   },
   // ...
-}
+};
 ```
 
 3. Update file requires in `src/constants/fontAssets.ts`:
 
 ```ts
 export const FontAssets = {
-  YourFont_400Regular: require('../../assets/fonts/YourFont-Regular.ttf'),
+  YourFont_400Regular: require("../../assets/fonts/YourFont-Regular.ttf"),
   // ...
-}
+};
 ```
 
 ---
@@ -285,12 +286,12 @@ export const FontAssets = {
 <ThemedButton label="Disabled" disabled={true} />
 ```
 
-| Variant | Use for |
-|---|---|
-| primary | Main CTA |
-| secondary | Secondary actions |
-| outline | Alternative actions |
-| ghost | Subtle actions |
+| Variant     | Use for                |
+| ----------- | ---------------------- |
+| primary     | Main CTA               |
+| secondary   | Secondary actions      |
+| outline     | Alternative actions    |
+| ghost       | Subtle actions         |
 | destructive | Delete, remove, danger |
 
 ### ThemedInput
@@ -319,33 +320,33 @@ export const FontAssets = {
 ### Supported languages
 
 | Code | Language | Direction |
-|---|---|---|
-| en | English | LTR |
-| ar | Arabic | RTL |
-| fr | French | LTR |
+| ---- | -------- | --------- |
+| en   | English  | LTR       |
+| ar   | Arabic   | RTL       |
+| fr   | French   | LTR       |
 
 ### Using translations
 
 ```tsx
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
-const { t } = useTranslation('common')
-const { t: tAuth } = useTranslation('auth')
+const { t } = useTranslation("common");
+const { t: tAuth } = useTranslation("auth");
 
-t('actions.confirm')        // "Confirm"
-tAuth('login.title')        // "Welcome Back"
+t("actions.confirm"); // "Confirm"
+tAuth("login.title"); // "Welcome Back"
 ```
 
 ### Switching language at runtime
 
 ```tsx
-import { useLocale } from '@/hooks/useLocale'
+import { useLocale } from "@/hooks/useLocale";
 
-const { language, changeLanguage, isRTL } = useLocale()
+const { language, changeLanguage, isRTL } = useLocale();
 
-changeLanguage('ar')   // switch to Arabic + enable RTL
-changeLanguage('en')   // switch to English + disable RTL
-changeLanguage('fr')   // switch to French
+changeLanguage("ar"); // switch to Arabic + enable RTL
+changeLanguage("en"); // switch to English + disable RTL
+changeLanguage("fr"); // switch to French
 ```
 
 > **Note:** RTL layout change for Arabic requires an app restart to fully apply.
@@ -396,19 +397,19 @@ assets/images/
 3. Register in `src/constants/icons.ts`:
 
 ```ts
-import MyIconSvg from '../../assets/images/svgs/my-icon.svg'
+import MyIconSvg from "../../assets/images/svgs/my-icon.svg";
 
 export const AppIcons = {
   // ...existing icons
   myIcon: MyIconSvg,
-}
+};
 ```
 
 4. Use anywhere:
 
 ```tsx
-import { AppIcons } from '@/constants'
-<AppIcons.myIcon width={24} height={24} fill={colors.primary} />
+import { AppIcons } from "@/constants";
+<AppIcons.myIcon width={24} height={24} fill={colors.primary} />;
 ```
 
 ### Adding a tab icon
@@ -421,13 +422,13 @@ import { AppIcons } from '@/constants'
 export const TabIcons = {
   light: {
     // ...existing
-    myTab: require('../../assets/images/tab/light/my-tab.svg'),
+    myTab: require("../../assets/images/tab/light/my-tab.svg"),
   },
   dark: {
     // ...existing
-    myTab: require('../../assets/images/tab/dark/my-tab.svg'),
+    myTab: require("../../assets/images/tab/dark/my-tab.svg"),
   },
-}
+};
 ```
 
 4. Add to `TAB_SCREENS` in `app/(tabs)/_layout.tsx`
@@ -438,14 +439,14 @@ export const TabIcons = {
 
 The `app/(demo)/` folder contains a visual reference of every base template feature:
 
-| Screen | Shows |
-|---|---|
-| Typography | All ThemedText variants and font families |
-| Colors | Full color palette for current theme |
-| Buttons | All ThemedButton variants and states |
-| Inputs | All ThemedInput states |
-| Icons | All registered AppIcons and TabIcons |
-| Spacing | 4pt spacing scale visual grid |
+| Screen       | Shows                                     |
+| ------------ | ----------------------------------------- |
+| Typography   | All ThemedText variants and font families |
+| Colors       | Full color palette for current theme      |
+| Buttons      | All ThemedButton variants and states      |
+| Inputs       | All ThemedInput states                    |
+| Icons        | All registered AppIcons and TabIcons      |
+| Spacing      | 4pt spacing scale visual grid             |
 | Localization | Language switcher and translation preview |
 
 ### Deleting demo screens
@@ -466,10 +467,118 @@ Modules are optional layers installed by the CLI on top of the base template. Ea
 
 ### Available modules
 
-| Module | Branch | What it adds |
-|---|---|---|
-| Auth | `modules/auth` | Login, register, forgot password, token storage |
-| Redux | `modules/redux` | Redux Toolkit store, base slice, async thunk pattern |
+| Module | Branch          | What it adds                                         |
+| ------ | --------------- | ---------------------------------------------------- |
+| Auth   | `modules/auth`  | Login, register, forgot password, token storage      |
+| Redux  | `modules/redux` | Redux Toolkit store, base slice, async thunk pattern |
+
+## Redux Module
+
+### What it includes
+
+| File                      | Purpose                                        |
+| ------------------------- | ---------------------------------------------- |
+| `store/index.ts`          | Redux store with redux-persist config          |
+| `slices/appSlice.ts`      | Global app state — theme, language, onboarding |
+| `slices/userSlice.ts`     | Logged in user data                            |
+| `hooks/useAppDispatch.ts` | Typed dispatch hook                            |
+| `hooks/useAppSelector.ts` | Typed selector hook                            |
+| `types/redux.types.ts`    | RootState, AppDispatch types                   |
+
+### Persisted state
+
+State persists across app restarts via redux-persist + AsyncStorage.
+
+Both slices are persisted by default. To exclude a slice from
+persistence remove it from the whitelist in `store/index.ts`:
+
+```ts
+const persistConfig = {
+  key: "root",
+  storage: AsyncStorage,
+  whitelist: ["app"], // remove 'user' to stop persisting user data
+};
+```
+
+### Usage
+
+```tsx
+import { useAppDispatch, useAppSelector } from "@/modules/redux";
+import { setTheme, setLanguage, setOnboarded } from "@/modules/redux";
+import { setUser, clearUser } from "@/modules/redux";
+
+const dispatch = useAppDispatch();
+
+// Read state
+const theme = useAppSelector((state) => state.app.theme);
+const user = useAppSelector((state) => state.user.data);
+
+// Dispatch actions
+dispatch(setTheme("dark"));
+dispatch(setLanguage("ar"));
+dispatch(setUser(userData));
+dispatch(clearUser());
+```
+
+### Adding a new slice
+
+1. Create slice in `src/modules/redux/slices/`:
+
+```ts
+// src/modules/redux/slices/cartSlice.ts
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface CartState {
+  items: CartItem[];
+  total: number;
+}
+
+const initialState: CartState = {
+  items: [],
+  total: 0,
+};
+
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    addItem(state, action: PayloadAction<CartItem>) {
+      state.items.push(action.payload);
+    },
+    clearCart(state) {
+      state.items = [];
+      state.total = 0;
+    },
+  },
+});
+
+export const { addItem, clearCart } = cartSlice.actions;
+export default cartSlice.reducer;
+```
+
+2. Register in `store/index.ts`:
+
+```ts
+import cartReducer from "../slices/cartSlice";
+
+const rootReducer = combineReducers({
+  app: appReducer,
+  user: userReducer,
+  cart: cartReducer, // ← add here
+});
+```
+
+3. Add to whitelist if it should persist:
+
+```ts
+whitelist: ["app", "user", "cart"];
+```
+
+4. Export actions from `index.ts`:
+
+```ts
+export { addItem, clearCart } from "./slices/cartSlice";
+```
 
 ### Installing a module
 
@@ -500,14 +609,14 @@ modules/redux     ← redux module development
 
 ```tsx
 // app/(tabs)/profile.tsx
-import { ThemedView, ThemedText } from '@/components'
+import { ThemedView, ThemedText } from "@/components";
 
 export default function ProfileScreen() {
   return (
     <ThemedView>
       <ThemedText variant="titleLarge">Profile</ThemedText>
     </ThemedView>
-  )
+  );
 }
 ```
 
@@ -521,12 +630,12 @@ export default function ProfileScreen() {
 const TAB_SCREENS = [
   // ...existing tabs
   {
-    name: 'profile',
-    label: 'Profile',
+    name: "profile",
+    label: "Profile",
     lightIcon: TabIcons.light.profile,
     darkIcon: TabIcons.dark.profile,
   },
-]
+];
 ```
 
 ---
