@@ -1,4 +1,4 @@
-# rn-base-template
+# rn-template
 
 A production-ready React Native + Expo starter template for freelancers and teams who want to skip the boilerplate and ship faster.
 
