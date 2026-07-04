@@ -4,20 +4,21 @@
  * Entry point for the demo section. Links to all feature demos.
  * Delete app/(demo)/ folder when starting a real project.
  */
-import { useRouter } from 'expo-router';
-import { ScrollView, View, Switch, StyleSheet } from 'react-native';
-import { ThemedView, ThemedText, ThemedButton } from '@/components';
-import { useTheme } from '@/hooks/useTheme';
-import { Spacing } from '@/constants';
+import { ThemedButton, ThemedText, ThemedView } from "@/components";
+import { Spacing } from "@/constants";
+import { useTheme } from "@/hooks/useTheme";
+import { useRouter } from "expo-router";
+import { ScrollView, StyleSheet, Switch, View } from "react-native";
 
 const DEMO_SECTIONS = [
-  { label: 'Typography', route: '/(demo)/typography' },
-  { label: 'Colors', route: '/(demo)/colors' },
-  { label: 'Buttons', route: '/(demo)/buttons' },
-  { label: 'Inputs', route: '/(demo)/inputs' },
-  { label: 'Icons', route: '/(demo)/icons' },
-  { label: 'Spacing', route: '/(demo)/spacing' },
-  { label: 'Localization', route: '/(demo)/localization' },
+  { label: "Typography", route: "/(demo)/typography" },
+  { label: "Colors", route: "/(demo)/colors" },
+  { label: "Buttons", route: "/(demo)/buttons" },
+  { label: "Inputs", route: "/(demo)/inputs" },
+  { label: "Icons", route: "/(demo)/icons" },
+  { label: "Spacing", route: "/(demo)/spacing" },
+  { label: "Localization", route: "/(demo)/localization" },
+  { label: "Redux Store", route: "/(demo)/redux" },
 ];
 
 export default function DemoHome() {
@@ -26,9 +27,8 @@ export default function DemoHome() {
   const { colors, isDark, setThemeMode } = useTheme();
 
   const handleThemeToggle = () => {
-    setThemeMode(isDark ? 'light' : 'dark');
+    setThemeMode(isDark ? "light" : "dark");
   };
-
 
   return (
     <ScrollView
@@ -44,7 +44,7 @@ export default function DemoHome() {
 
       <View style={styles.toggleRow}>
         <ThemedText variant="labelMedium">
-          {isDark ? 'Dark Mode' : 'Light Mode'}
+          {isDark ? "Dark Mode" : "Light Mode"}
         </ThemedText>
         <Switch
           value={isDark}
@@ -54,7 +54,9 @@ export default function DemoHome() {
         />
       </View>
 
-      <ThemedView style={{ backgroundColor: colors.background, ...styles.list }}>
+      <ThemedView
+        style={{ backgroundColor: colors.background, ...styles.list }}
+      >
         {DEMO_SECTIONS.map((section) => (
           <ThemedButton
             key={section.route}
@@ -74,9 +76,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   toggleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: Spacing.lg,
   },
   content: {
@@ -92,6 +94,6 @@ const styles = StyleSheet.create({
     gap: Spacing.md,
   },
   button: {
-    width: '100%',
+    width: "100%",
   },
 });
